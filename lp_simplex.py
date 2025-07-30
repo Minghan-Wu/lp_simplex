@@ -11,4 +11,5 @@ from numpy import linalg as LA
 from numpy.linalg import inv
 
 def simplex_iteration(A,b,c,m:int, n:int):
+    Iteration = 0
     
