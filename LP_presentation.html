@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Slides</title>
+<style>
+  body { text-align: center; background: #f5f5f5; margin: 0; }
+  img {
+  width: 100%;       /* make image take full width */
+  height: 100vh;     /* make image take full height of viewport */
+  object-fit: cover; /* keep image proportions */
+  margin: 0;}
+  .navigation { margin: 20px; }
+  button { padding: 10px 20px; font-size: 16px; }
+</style>
+</head>
+<body>
+
+<img id="slide" src="Slide1.png" alt="Slide">
+
+<div class="navigation">
+  <button onclick="prevSlide()">Previous</button>
+  <button onclick="nextSlide()">Next</button>
+</div>
+
+<script>
+const slides = [
+  'Slide1.png',
+  'Slide2.png',
+  'Slide3.png',
+  'Slide4.png',
+  'Slide5.png',
+  'Slide6.png',
+  'Slide7.png',
+  'Slide8.png',
+  'Slide9.png',
+  'Slide10.png',
+  'Slide11.png',
+  'Slide12.png',
+  'Slide13.png',
+  'Slide14.png',
+  'Slide15.png',
+  'Slide16.png',
+  'Slide17.png',
+  'Slide18.png',
+  'Slide19.png',
+  'Slide20.png',
+  'Slide21.png',
+  'Slide22.png',
+  'Slide23.png',
+  
+  // Add all your slide filenames here in order
+
+];
+
+document.addEventListener('keydown', function(event) {
+    if(event.key === 'ArrowRight') {  // Right arrow
+        nextSlide();
+    }
+    if(event.key === 'ArrowLeft') {   // Left arrow
+        prevSlide();
+    }
+});
+
+let current = 0;
+const slideElement = document.getElementById('slide');
+
+function nextSlide() {
+  if (current < slides.length - 1) current++;
+  slideElement.src = slides[current];
+}
+
+function prevSlide() {
+  if (current > 0) current--;
+  slideElement.src = slides[current];
+}
+</script>
+
+</body>
+</html>
